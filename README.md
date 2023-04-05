@@ -1,5 +1,9 @@
 # nso_action_show
 
+Se require instalar textfsm en python 
+pip install textfsm 
+
+
 ncs-make-package --service-skeleton python --action-example show_action
 
 y luego remplazar el show_action.yang y main.py con los archivos anexos.
