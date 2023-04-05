@@ -1,0 +1,44 @@
+module show_action {
+
+  namespace "http://example.com/show_action";
+  prefix show_action;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  description
+    "Bla bla...";
+
+  revision 2016-01-01 {
+    description
+      "Initial revision.";
+  }
+
+  container action {
+    tailf:action show-action {
+      tailf:actionpoint show;
+      input {
+        leaf device_name {
+          type leafref {
+            path "/ncs:devices/ncs:device/ncs:name";
+          }
+        }
+        leaf command {
+          type string;
+        }
+      }
+      output {
+        leaf message {
+          type string;
+        }
+      }
+    }
+  }
+}
